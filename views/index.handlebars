@@ -13,18 +13,20 @@
             <div class="card-body">
               <h5 class="card-title"><span>{{this.headline}}</span></h5>
               <p class="card-text" id="storyAuthor"><span>{{this.author}}</span></p>
-              <a href="{{this.link}}" class="btn btn-primary">View Story</a>
-              <a class="btn btn-secondary" href="viewComments">View Comments</a>
+              <a id="cardButtons" href="{{this.link}}" class="btn btn-primary">View Story</a>
+              <a id="cardButtons" class="btn btn-secondary" href="viewComments">View Comments</a>
+              <a id="cardButtons" class="btn btn-info">Save Article</a>
             </div>
           </div>
         {{/each}}
       </div>
     </div>
+
+
+  {{else}}
+    <div class="container">
+      <h3>Click "Scrape" to get stories!</h3>
+    </div>
   {{/if}}
 
-{{!--{{else}}--}}
-{{!--  <div class="container">--}}
-{{!--    <h3>Click "Scrape" to get stories!</h3>--}}
-{{!--  </div>--}}
-{{!--  {{/else}}--}}
 </div>

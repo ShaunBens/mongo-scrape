@@ -12,7 +12,9 @@
         <div class="card-body">
           <h5 class="card-title"><span>{{this.headline}}</span></h5>
           <p class="card-text" id="storyAuthor"><span>{{this.author}}</span></p>
-          <a href="{{this.link}}" class="btn btn-primary">View Story</a>
+          <a id="cardButtons" href="{{this.link}}" class="btn btn-primary">View Story</a>
+          <a id="cardButtons" class="btn btn-danger">Unsave Story</a>
+          <a href="#commentModal" id="cardButtons" class="btn btn-info">Add/View Comments</a>
         </div>
 
         {{/each}}
@@ -21,6 +23,46 @@
     </div>
   </div>
 
+  {{else}}
+  <div class="row">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5>There are no saved stories</h5>
+      </div>
+    </div>
+  </div>
+
   {{/if}}
 
+</div>
+
+<!-- Comment Modal -->
+<div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Add or Review Comments</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="commentSection">
+          <p>{{this.comments}}</p>
+        </div>
+        <div id="addComments">
+          <form>
+            <div class="form-group">
+              <label for="addComment">Add Comments</label>
+              <textarea class="form-control" id="userComment" rows="2"></textarea>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
 </div>
