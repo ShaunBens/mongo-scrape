@@ -1,0 +1,21 @@
+<!-- Story Div -->
+<div class="container-fluid text-center" id="stories">
+
+  {{#if stories}}
+
+    <div class="row story-grid">
+      <div class="col">
+
+        {{#each stories}}
+          <!-- Stories go here-->
+          <div class="card" style="width: 18rem;" data-id="{{this._id}}">
+            <img class="card-img-top" src="https://secure.parksandresorts.wdpromedia.com/media/disneyparks/blog/wp-content/uploads/2018/01/sdfh301-260x146.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Disney’s Wedding Showcase: Designing the Wedding of Your Dreams: Story Headline</h5>
+              <p class="card-text">by Korri McFann, Brand Steward, Disney’s Fairy Tale Weddings & Honeymoons</p>
+              <a href="https://disneyparks.disney.go.com/blog/2018/01/disneys-wedding-showcase-designing-the-wedding-of-your-dreams/" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+      </div>
+    </div>
+</div>
