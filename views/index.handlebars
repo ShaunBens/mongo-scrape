@@ -9,13 +9,22 @@
         {{#each stories}}
           <!-- Stories go here-->
           <div class="card" style="width: 18rem;" data-id="{{this._id}}">
-            <img class="card-img-top" src="https://secure.parksandresorts.wdpromedia.com/media/disneyparks/blog/wp-content/uploads/2018/01/sdfh301-260x146.jpg" alt="Card image cap">
+            <img id="storyPhoto" class="card-img-top" src="{{this.photo}}" alt="{{this.headline}}">
             <div class="card-body">
-              <h5 class="card-title">Disney’s Wedding Showcase: Designing the Wedding of Your Dreams: Story Headline</h5>
-              <p class="card-text">by Korri McFann, Brand Steward, Disney’s Fairy Tale Weddings & Honeymoons</p>
-              <a href="https://disneyparks.disney.go.com/blog/2018/01/disneys-wedding-showcase-designing-the-wedding-of-your-dreams/" class="btn btn-primary">Go somewhere</a>
+              <h5 class="card-title"><span>{{this.headline}}</span></h5>
+              <p class="card-text" id="storyAuthor"><span>{{this.author}}</span></p>
+              <a href="{{this.link}}" class="btn btn-primary">View Story</a>
+              <a class="btn btn-secondary" href="viewComments">View Comments</a>
             </div>
           </div>
+        {{/each}}
       </div>
     </div>
+  {{/if}}
+
+{{!--{{else}}--}}
+{{!--  <div class="container">--}}
+{{!--    <h3>Click "Scrape" to get stories!</h3>--}}
+{{!--  </div>--}}
+{{!--  {{/else}}--}}
 </div>

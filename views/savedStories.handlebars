@@ -1,0 +1,26 @@
+<div class="container-fluid text-center" id="stories">
+
+  {{#if stories}}
+
+  <div class="row story-grid">
+    <div class="col">
+
+      {{#each stories}}
+      <!-- Stories go here-->
+      <div class="card" style="width: 18rem;" data-id="{{this._id}}">
+        <img id="storyPhoto" class="card-img-top" src="{{this.photo}}" alt="{{this.headline}}">
+        <div class="card-body">
+          <h5 class="card-title"><span>{{this.headline}}</span></h5>
+          <p class="card-text" id="storyAuthor"><span>{{this.author}}</span></p>
+          <a href="{{this.link}}" class="btn btn-primary">View Story</a>
+        </div>
+
+        {{/each}}
+
+      </div>
+    </div>
+  </div>
+
+  {{/if}}
+
+</div>
