@@ -7,7 +7,7 @@ var mongoose = require("mongoose");
 
 var PORT = process.env.PORT || 8080;
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://shaunbens:abcd1234@ds237967.mlab.com:37967/heroku_2x3bc8b5";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://heroku_2x3bc8b5:phjkvp1ic9voibo190ghadl1jg@ds237967.mlab.com:37967/heroku_2x3bc8b5";
 
 // var db = require("./models");
 
@@ -21,7 +21,7 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/disney-scraper" || "mongodb://shaunbens:abcd1234@ds237967.mlab.com:37967/heroku_2x3bc8b5", {});
+mongoose.connect(MONGODB_URI);
 
 require("./routes/api-routes.js")(app);
 
