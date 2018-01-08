@@ -26,6 +26,7 @@ module.exports = function(app) {
 
   //Scrape route to put data into mongodb
   app.get("/scrape", function(req, res) {
+    db.Story.remove();
     request("https://disneyparks.disney.go.com/blog/latest-stories/", function(error, response, html) {
       var $ = cheerio.load(html);
 

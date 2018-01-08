@@ -15,7 +15,7 @@
               <h5 class="card-title" id="storyheadline"><span>{{this.headline}}</span></h5>
               <p class="card-text" id="storyAuthor"><span>{{this.author}}</span></p>
               <a id="viewStory" href="{{this.link}}" class="btn btn-primary cardButtons">View Story</a>
-              <a id="saveStory" data-id="{{this._id}}" class="btn btn-success cardButtons" href="#">Save Story</a>
+              <a id="saveStory" data-id="{{this._id}}" class="btn btn-success cardButtons">Save Story</a>
               <a id="viewComment" data-id="{{this._id}}" class="btn btn-secondary cardButtons" href="viewComments">View Comments</a>
             </div>
           </div>
@@ -28,7 +28,9 @@
 
   {{else}}
     <div class="container">
-      <h3>Click "Scrape" to get stories!</h3>
+      <div class="card">
+        <h3>Click "Scrape" to get stories!</h3>
+      </div>
     </div>
   {{/if}}
 

@@ -9,10 +9,9 @@ $(function() {
     $.ajax({
       method: "PUT",
       url: "/save/" + storyId,
-    }).then(function(data) {
-      if (data) {
-        $("[data-id='" + data._id + "']").remove();
-
+    }).then(function(dbStory) {
+      if (dbStory) {
+        $("[data-id='" + dbStory._id + "']").remove();
       }
     });
   });
@@ -30,11 +29,18 @@ $(function() {
     }).then(function(dbStory) {
       if (dbStory) {
         $("[data-id='" + dbStory._id + "']").remove();
-        dbStory.render("savedStories", { stories: dbStory });
       }
     });
-    console.log(storyId);
   });
+
+  $("#viewComment").click(function(e) {
+    e.preventDefault();
+
+    var storyId = $(this).parents('.storyItem').data('id');
+    var storyHeadline = $(this).parents('.storyItem').find('#storyHeadline').text();
+    console.log(storyHeadline);
+
+  })
 
 
 }); //End Document Ready

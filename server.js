@@ -14,10 +14,9 @@ var MONGODB_URI = process.env.MONGODB_URI || "mongodb://heroku_2x3bc8b5:phjkvp1i
 var app = express();
 
 //Handlebars
+app.use(express.static("public"));
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
-app.use(express.static("public"));
-
 app.use(bodyParser.urlencoded({ extended: false }));
 
 mongoose.Promise = Promise;
