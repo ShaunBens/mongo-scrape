@@ -7,7 +7,7 @@ module.exports = function(app) {
     db.Story
       .find({ saved: false })
       .then(function(dbStory) {
-        res.render("index", { articles: dbStory });
+        res.render("index", { stories: dbStory });
       }).catch(function(err) {
         res.json(err);
       });
@@ -37,11 +37,11 @@ module.exports = function(app) {
         story.link = $(element).children("div.col-sm-5").children("a").attr("href");
         story.photo = $(element).children("div.col-sm-5").children("a").children("img").attr("src");
 
-        console.log(story.headline + ": Story Headline");
-        console.log(story.author + ": Author");
-        console.log(story.link + ": Link");
-        console.log(story.photo + ": photo");
-        console.log(story);
+        // console.log(story.headline + ": Story Headline");
+        // console.log(story.author + ": Author");
+        // console.log(story.link + ": Link");
+        // console.log(story.photo + ": photo");
+        // console.log(story);
 
         if (story.headline && story.author && story.link && story.photo) {
           db.Story
@@ -85,7 +85,7 @@ module.exports = function(app) {
     db.Story
       .find({ saved: true })
       .then(function(dbStory) {
-        res.render("saved", { articles: dbStory });
+        res.render("saved", { stories: dbStory });
       }).catch(function(err) {
         res.json(err);
       });
