@@ -70,7 +70,7 @@ module.exports = function(app) {
   });
 
   //Unsave an aritcle
-  app.put("/unsanve/:id", function(req, res) {
+  app.put("/unsave/:id", function(req, res) {
     db.Story
       .findOneAndUpdate({ _id: req.params.id }, { saved: false })
       .then(function(dbStory) {
@@ -85,7 +85,7 @@ module.exports = function(app) {
     db.Story
       .find({ saved: true })
       .then(function(dbStory) {
-        res.render("saved", { stories: dbStory });
+        res.render("savedStories", { stories: dbStory });
       }).catch(function(err) {
         res.json(err);
       });

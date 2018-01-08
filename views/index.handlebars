@@ -7,16 +7,16 @@
 
 
       {{#each stories}}
-        <div class="col-sm-6 col-md-4 col-lg-3 col">
+        <div class="col-sm-6 col-md-4 col-lg-3 col storyItem" data-id="{{this._id}}">
           <!-- Stories go here-->
           <div class="card" style="width: 18rem;" data-id="{{this._id}}">
             <img id="storyPhoto" class="card-img-top" src="{{this.photo}}" alt="{{this.headline}}">
             <div class="card-body">
-              <h5 class="card-title"><span>{{this.headline}}</span></h5>
+              <h5 class="card-title" id="storyheadline"><span>{{this.headline}}</span></h5>
               <p class="card-text" id="storyAuthor"><span>{{this.author}}</span></p>
               <a id="viewStory" href="{{this.link}}" class="btn btn-primary cardButtons">View Story</a>
-              <a id="viewComment" class="btn btn-secondary cardButtons" href="viewComments">View Comments</a>
-              <a id="saveStory" class="btn btn-info cardButtons">Save Story</a>
+              <a id="saveStory" data-id="{{this._id}}" class="btn btn-success cardButtons" href="#">Save Story</a>
+              <a id="viewComment" data-id="{{this._id}}" class="btn btn-secondary cardButtons" href="viewComments">View Comments</a>
             </div>
           </div>
         </div>
