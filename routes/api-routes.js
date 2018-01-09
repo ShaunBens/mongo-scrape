@@ -99,7 +99,7 @@ module.exports = function(app) {
     db.Comment
       .create(req.body)
       .then(function(dbComment) {
-        return db.Article.findOneAndUpdate({ _id: req.params.id }, { $push: { comment: dbComment._id } }, { new: true });
+        return db.Story.findOneAndUpdate({ _id: req.params.id }, { $push: { comment: dbComment._id } }, { new: true });
       }).then(function(dbStory) {
         res.json(dbStory);
       }).catch(function(err) {
