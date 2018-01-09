@@ -10,9 +10,9 @@ $(function() {
       method: "PUT",
       url: "/save/" + storyId,
     }).then(function(dbStory) {
-      if (dbStory) {
-        $("[data-id='" + dbStory._id + "']").remove();
-      }
+      // $("[data-id='" + dbStory._id + "']").remove();
+      location.reload(dbStory);
+
     });
   });
 
@@ -29,6 +29,7 @@ $(function() {
     }).then(function(dbStory) {
       if (dbStory) {
         $("[data-id='" + dbStory._id + "']").remove();
+        location.reload();
       }
     });
   });

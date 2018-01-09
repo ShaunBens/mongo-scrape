@@ -15,7 +15,7 @@
               <h5 class="card-title" id="storyheadline"><span>{{this.headline}}</span></h5>
               <p class="card-text" id="storyAuthor"><span>{{this.author}}</span></p>
               <a id="viewStory" href="{{this.link}}" class="btn btn-primary cardButtons">View Story</a>
-              <a id="saveStory" data-id="{{this._id}}" class="btn btn-success cardButtons">Save Story</a>
+              <a href="#storySavedModal" id="saveStory" data-id="{{this._id}}" class="btn btn-success cardButtons">Save Story</a>
               <a id="viewComment" data-id="{{this._id}}" class="btn btn-secondary cardButtons" href="viewComments">View Comments</a>
             </div>
           </div>
@@ -34,4 +34,25 @@
     </div>
   {{/if}}
 
+</div>
+
+<!-- Story Saved Modal -->
+<div id="storySavedModal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
